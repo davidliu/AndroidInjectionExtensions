@@ -15,6 +15,7 @@ implementation 'com.github.davidliu.AndroidInjectionExtensions:androidinjection-
 Assuming thorough usage of Dagger.Android's framework types (i.e. `DaggerApplication/DaggerActivity/DaggerFragment`),
 
 1. Replace `DaggerFragments` with `DaggerFragmentExt`. This will wrap the context given to Views so that the injection will work.
-2. Call `AndroidInjectionExt.inject(View)` or `AndroidInjectionExt.inject(target, context)`
+2. Connect the target object to Dagger through a `@ContributesAndroidInjector` provision.
+3. Call `AndroidInjectionExt.inject(View)` or `AndroidInjectionExt.inject(target, context)`
 
 See the [sample code](/sample-app/src/main/java/com/deviange/androidinjection/sample/) here.
