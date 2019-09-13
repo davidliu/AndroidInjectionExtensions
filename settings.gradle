@@ -1,0 +1,2 @@
+include ':sample-app', ':androidinjection-extensions'
+rootProject.name='AndroidInjectionExtensions'
