@@ -6,10 +6,18 @@ import android.view.View
 import dagger.android.HasAndroidInjector
 
 object AndroidInjectionExt {
-    private fun inject(target: Any, context: Context) {
+    /**
+     * Injects any type through the nearest AndroidInjector.
+     *
+     * Warning: This generally won't find a Fragment's AndroidInjector unless your target is a View.
+     */
+    fun inject(target: Any, context: Context) {
         findNearestAndroidInjector(target, context).androidInjector().inject(target)
     }
 
+    /**
+     * Injects a view through the nearest AndroidInjector.
+     */
     fun inject(view: View) {
         inject(view, view.context)
     }
