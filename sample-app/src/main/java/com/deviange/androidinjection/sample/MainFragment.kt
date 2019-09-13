@@ -4,12 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.deviange.androidinjection.AndroidInjectorContextWrapper
+import com.deviange.androidinjection.DaggerFragmentExt
 import dagger.Provides
 import dagger.android.ContributesAndroidInjector
-import dagger.android.support.DaggerFragment
 
-class MainFragment : DaggerFragment() {
+class MainFragment : DaggerFragmentExt() {
 
     companion object {
         fun newInstance() = MainFragment()
@@ -20,11 +19,6 @@ class MainFragment : DaggerFragment() {
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.main_fragment, container, false)
-    }
-
-    override fun onGetLayoutInflater(savedInstanceState: Bundle?): LayoutInflater {
-        return super.onGetLayoutInflater(savedInstanceState)
-            .cloneInContext(AndroidInjectorContextWrapper(androidInjector(), requireContext()))
     }
 
     @dagger.Module

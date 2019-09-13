@@ -6,7 +6,7 @@ import android.view.View
 import dagger.android.HasAndroidInjector
 
 object AndroidInjectionExt {
-    fun inject(target: Any, context: Context) {
+    private fun inject(target: Any, context: Context) {
         findNearestAndroidInjector(target, context).androidInjector().inject(target)
     }
 
