@@ -7,7 +7,15 @@ For usage with [dagger-android](https://dagger.dev/android.html) to inject arbit
 ### Download:
 
 ```
-implementation 'com.github.davidliu.AndroidInjectionExtensions:androidinjection-extensions:-SNAPSHOT'
+allprojects {
+    repositories {
+        /* .. */
+        maven { url "https://jitpack.io" }
+    }
+}
+dependencies {
+    implementation 'com.github.davidliu:AndroidInjectionExtensions:0.1'
+}
 ```
 
 ### Usage:
